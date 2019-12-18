@@ -2,7 +2,7 @@ zuul:
   #ignored-services: 'x'
   #prefix: /api
   #strip-prefix: true
-  #定义服务转发规则
+  #定义服务转发规则#
   routes:
     #item-service这个名字任意取的
     item-service:
