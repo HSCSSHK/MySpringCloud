@@ -1,0 +1,16 @@
+server:
+  port: 8091 #服务端口
+spring:
+   application:
+        name: app-item
+eureka:
+  client:
+    service-url:
+      #defaultZone: http://127.0.0.1:8100/eureka
+      defaultZone: http://hsc:123456@127.0.0.1:8100/eureka,http://hsc:123456@127.0.0.1:9100/eureka
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+       prefer-ip-address: true
+       ip-address: 127.0.0.1
+       instance-id: ${spring.application.name}###${server.port} #指定实例id

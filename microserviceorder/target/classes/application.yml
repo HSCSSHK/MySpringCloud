@@ -1,0 +1,25 @@
+server:
+  port: 8082 #服务端口
+myspcloud:
+  item:
+    url: http://127.0.0.1:8080/item/
+spring:
+  application:
+      name: app-order
+eureka:
+  client:
+    service-url:
+      #defaultZone: http://127.0.0.1:8100/eureka
+      defaultZone: http://hsc:123456@127.0.0.1:8100/eureka
+    register-with-eureka: true
+    fetch-registry: true
+app-item:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+#开启hystrix断路器
+feign:
+  hystrix:
+    enabled: true
+#配置Swagger接口扫描范围
+swagger:
+  base-package: com.hsc.order
