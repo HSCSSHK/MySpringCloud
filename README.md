@@ -15,14 +15,14 @@
    2.2先启动 EurekaServer，再启动microserviceconfigserver，再启动microserviceitem，microserviceorder，microsrviceapigateway
    2.3
     注册中心：http://localhost:8100/
-	![这里写图片描述]()
-	
+	![这里写图片描述](https://github.com/HSCSSHK/MySpringCloud/blob/master/img/springEureka.png)
     网关swagger:http://localhost:8087/swagger-ui.html
-	![这里写图片描述]()
+	![这里写图片描述](https://github.com/HSCSSHK/MySpringCloud/blob/master/img/zuul-swagger.png)
    2.4
     在GitHub的项目MySpringCloud 右上角Settings 可以在Webhooks配置回调地址 http://localhost:8080/actuator/refresh
     用户更改配置文件后再推送到后，可以不用重启项目，可以读取更改的配置属性值。
 	如果本地的地址配置访问不了，可以通过穿透工具进行访问
+	![这里写图片描述](https://github.com/HSCSSHK/MySpringCloud/blob/master/img/webhooks.png)
 	如果手动Post请求http://localhost:8080/actuator/refresh成功
 	在GitHub上配置后推送回调不成功（返回转态出现json问题）。可以把Webhooks配置的地址先配置成其它接口地址如refreshconfig，再请rerfreshconfig接口去Post请求http://localhost:8080/actuator/refresh 实现更新配置内容
 	
